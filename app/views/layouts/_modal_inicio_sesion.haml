@@ -1,0 +1,28 @@
+#myModal.modal.fade{"aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
+  .modal-dialog{:role => "document"}
+    .modal-content
+      = form_for('usuario', as: 'usuario', url: '/usuarios/sign_in') do |f|
+        .modal-header.bk-gris.txt-blanco
+          %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+            %span{"aria-hidden" => "true"} ×
+          %h4#myModalLabel.modal-title.txt-h-medio.tama_18 Inicio de Sesión
+        .modal-body
+          .form-group
+            = f.label :email, "Nombre de Usuario (Correo Electrónico):", :class => "tama_9"
+            = f.email_field :email, :required => true, :class => "trim form-control", :value => @usuario_recordado
+          .form-group
+            = f.label :password, "Contraseña:", :class => "tama_9"
+            = f.password_field :password, :required => true, :class => "form-control", :value => @clave_recordada, :placeholder => "Escriba aqui su clave actual", :pattern => ".{6,15}", |
+              :oninvalid => "setCustomValidity('El campo debe tener entre 6 y 15 caracteres')", :oninput => "setCustomValidity('')"                                                       |
+          .form-group
+            = f.check_box :remember_me
+            = f.label :remember_me, "Mantener sesión iniciada", :class => "tama_9"
+            %p
+              = link_to "¿Olvidó su contraseña?", "/usuarios/password/new", :title => 'Suministre su "Nombre de Usuario", pulse aquí, y una nueva clave será enviada a su correo.', :onclick => "valida_envia()", :class => " enlace_gris tama_10"
+        .row.modal-footer
+          .col-xs-6.text-left
+            %button.btn.boton-blanco-redondo{"data-dismiss" => "modal", :type => "button"} CANCELAR
+          .col-xs-6.text-right
+            = button_tag(:type=> 'submit', class: "btn boton-verde") do
+              %span.glyphicon.glyphicon-ok{"aria-hidden" => "true"}
+              INGRESAR

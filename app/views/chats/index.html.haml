@@ -1,0 +1,27 @@
+.container
+	.row
+		.col-md-4
+			.panel.bk-gris
+				.panel-heading.ft-blanco
+					%h3.quitar_margen_t-b
+						%i.fa.fa-envelope.boton-blanco-redondo.relleno_xs_t-b.relleno_xs_l-r
+						Messenger:
+				.panel-body.quitar_padding_t-b
+					%ul#lista-usuarios
+						- @usuarios.order_asc.each do |usuario|
+							%li.item-usuario-chat{:id => "item-usuario-chat-#{usuario.id}"}
+								%a.ft-blanco{:href => "/conversaciones?usuario_id=#{usuario.id}", :"data-remote" => "true", :"data-method" => "post"}
+									%div
+										%figure
+											%img{:src => "https://www.dopl3r.com/assets/reactions/like.png", :alt => "Like"}/
+										.informacion-item-usuario
+											= usuario.perfil.nombre_completo
+											%br/
+											%small.ft-gris-medio-oscuro{:id => "usuario-#{usuario.id}"}
+												- conversacion = Conversacion.entre(current_usuario,usuario).first
+												= conversacion.mensajes.last.cuerpo.truncate(30) if conversacion && conversacion.mensajes.count > 0
+		.col-md-8
+			%ul#lista-conversaciones
+				- if @conversaciones
+					- @conversaciones.each do |conversacion|
+						= render 'conversaciones/conversacion', conversacion: conversacion, usuario: current_usuario

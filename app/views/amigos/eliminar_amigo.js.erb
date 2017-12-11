@@ -1,0 +1,20 @@
+var amigos = $("#amigos .row");
+var amigo = amigos.find("[data-container-amigo='" + "<%= @amigo.id %>" + "']");
+if (amigo.length > 0) {
+	amigo.remove();
+	var contador_amigos = parseInt($("#contador_amigos").text());
+	$("#contador_amigos").text(contador_amigos - 1);
+}
+
+var bloqueados = $("#bloqueados .row");
+amigo = bloqueados.find("[data-container-amigo='" + "<%= @amigo.id %>" + "']");
+if (amigo.length > 0) {
+	amigo.remove();
+	var contador_bloqueados = parseInt($("#contador_bloqueados").text());
+	$("#contador_bloqueados").text(contador_bloqueados - 1);
+}
+
+var personas = $("#personas .row");
+var persona = personas.find("[data-container-amigo='" + "<%= @amigo.id %>" + "']");
+persona.remove();
+personas.append("<%= j(render 'amigos/amigo', amigo: @amigo) %>");

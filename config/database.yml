@@ -1,0 +1,20 @@
+default: &default
+  adapter: postgresql
+  encoding: utf8
+  pool: 5
+  username: usuario
+  password: 1234
+  host: 127.0.0.1
+  timeout: 5000
+
+development:
+  <<: *default
+  database: message_development
+
+test:
+  <<: *default
+  database: message_test
+
+production:
+  <<: *default
+  database: message_production

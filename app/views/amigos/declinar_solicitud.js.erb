@@ -1,0 +1,11 @@
+var solicitudes = $("#solicitudes .row");
+var solicitud = solicitudes.find("[data-container-amigo='" + "<%= @amigo.id %>" + "']");
+solicitud.remove();
+
+var contador_solicitudes = parseInt($("#contador_solicitudes").text());
+$("#contador_solicitudes").text(contador_solicitudes - 1);
+
+var personas = $("#personas .row");
+var persona = personas.find("[data-container-amigo='" + "<%= @amigo.id %>" + "']");
+persona.remove();
+personas.append("<%= j(render 'amigos/amigo', amigo: @amigo) %>");

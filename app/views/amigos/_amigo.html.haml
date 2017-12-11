@@ -1,0 +1,32 @@
+.col-xs-12.col-sm-6.col-md-4{:"data-container-amigo" => "#{amigo.id}"}
+	.panel.panel-default
+		.panel-heading
+			%a.margen_sm_b{:href => "perfiles/#{amigo.perfil.id}"}
+				= amigo.perfil.nombre_y_apellido.truncate(15)
+			- unless amigo == current_usuario
+				.opciones_amistad.pull-right.text-right{:"data-amigo" => "#{amigo.id}"}
+					- if current_usuario.friends.include?(amigo) || current_usuario.blocked_friends.include?(amigo)
+						%a.boton_eliminar_amigo.btn.boton-ocre{:href => "/amigos/eliminar_amigo/#{amigo.id}", :"data-method" => "post", :"data-remote" => "true"}
+							Eliminar
+						- if current_usuario.blocked_friends.include?(amigo)
+							%a.btn.boton-ocre{:href => "/amigos/desbloquear_amigo/#{amigo.id}", :"data-method" => "post", :"data-remote" => "true"}
+								Desbloquear
+						- else
+							%a.btn.boton-ocre{:href => "/amigos/bloquear_amigo/#{amigo.id}", :"data-method" => "post", :"data-remote" => "true"}
+								Bloquear
+					- elsif current_usuario.pending_friends.include?(amigo)
+						%a.btn.boton-ocre{:disabled => "true"}
+							Pendiente
+					- elsif current_usuario.requested_friends.include?(amigo)
+						%a.boton_aceptar_solicitud.btn.boton-verde{:href => "/amigos/aceptar_solicitud/#{amigo.id}", :"data-method" => "post", :"data-remote" => "true"}
+							Aceptar
+						%a.boton_aceptar_solicitud.btn.boton-ocre{:href => "/amigos/declinar_solicitud/#{amigo.id}", :"data-method" => "post", :"data-remote" => "true"}
+							Declinar
+					- else
+						%a.btn.boton-verde.boton_solicitud{:href => "/amigos/enviar_solicitud/#{amigo.id}", :"data-method" => "post", :"data-remote" => "true"}
+							Enviar Solicitud
+		.panel-body
+			%strong Nombres y Apellidos
+			%p= amigo.perfil.nombre_completo
+			%strong Apodo
+			%p= amigo.perfil.apodo

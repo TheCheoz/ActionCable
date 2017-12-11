@@ -1,0 +1,50 @@
+.container.relleno_t-b
+  %nav.navbar.quitar_margen_t-b
+    .container-fluid
+      / Brand and toggle get grouped for better mobile display
+      .navbar-header
+        %button.navbar-toggle.collapsed{"aria-expanded" => "false", "data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
+          %span.sr-only Toggle navigation
+          %span.icon-bar
+          %span.icon-bar
+          %span.icon-bar
+        %a.fl.margen_r{:href => "/"}
+          = image_tag("pelota-logo-p.png", :class => "", :height => "50px")
+      / Collect the nav links, forms, and other content for toggling
+      #bs-example-navbar-collapse-1.collapse.navbar-collapse
+        .margen_l-r.bk-blanco.navbar-left.recuadro_buscar{:style => "margin-top: 5px;"}
+          = form_tag( "/buscar_varios", :method => "post", :id => "form_buscar", :class=> "", :role => "search" ) do
+            = text_field_tag 'txt_buscar', nil, :class => "txt-h-oblique tama_9", :placeholder => "Buscar aqui ...", :required => true
+            %button.btn.btn-default.boton_buscar{:type => "submit"}
+              = image_tag("lupa.png", :height => "20px")
+        - if usuario_signed_in?
+          %ul.nav.navbar-nav.navbar-right.margen_t
+            %li.margen_l
+              %span
+                %a.enlace_blanco{:href => "perfiles/#{current_usuario.perfil.id}"}
+                  = current_usuario.perfil.nombre_y_apellido
+
+            %li.margen_l
+              %span
+                %a.enlace_blanco{:href => "#{root_path}"}
+                  Inicio
+
+            %li.margen_l
+              %span
+                %a{:href => "/amigos"}
+                  %i.fa.fa-users.ft-gris-super-claro.tama_18
+
+            %li.margen_l
+              %span
+                %a{:href => "#{chats_path}"}
+                  %i.fa.fa-commenting.ft-gris-super-claro.tama_18
+
+            %li.margen_l
+              %span
+                %a{:href => ""}
+                  %i.fa.fa-futbol-o.ft-gris-super-claro.tama_18
+
+            %li.margen_md_l-r
+              %span
+                %a{:href => ""}
+                  %i.fa.fa-question-circle.ft-gris-super-claro.tama_18

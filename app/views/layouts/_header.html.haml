@@ -1,0 +1,54 @@
+%body
+  %header
+    %nav.bk-gris.margen_sm_b.navbar.navbar-default.navbar-fixed-top
+      = render "layouts/header_publico"
+    %section.bk-blanco{:style => "padding-top: 80px;"}
+      .container.relleno_t-b
+        .navbar-header
+          %button.navbar-toggle.collapsed{"aria-expanded" => "false", "data-target" => "#cabecero-collapse-1", "data-toggle" => "collapse", :type => "button"}
+            %span.sr-only Toggle navigation
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          %a.navbar-brand.quitar_padding_t-b{:href => "/"}
+            = image_tag("logo_gol_m.png", :height => "80px", :alt => "Logo")
+        #cabecero-collapse-1.collapse.navbar-collapse
+          .row
+            %ul.nav.navbar-nav.navbar-right
+              - if usuario_signed_in?
+                %li
+                  %span
+                    %a.btn.boton-ocre{"data-method" => "delete", :href => destroy_usuario_session_path} CERRAR SESIÓN
+              - else
+                %li
+                  %span
+                    %button.btn.boton-ocre{"data-target" => "#myModal", "data-toggle" => "modal", :title => "Para ingresar haz clic AQUI", :type => "button"}
+                      INICIAR SESIÓN
+            = render "layouts/modal_inicio_sesion"
+            %ul.nav.navbar-nav.navbar-right.relleno_l-r
+              %li.margen_sm_r
+                %span
+                  = link_to image_tag("logo-gris-face.png", :height => '20px'), "https://www.facebook.com/oficial.facegol", |
+                    :class => "boton-blanco-redondo", :title => "Facebook", :target => "_blank"                             |
+              %li.margen_sm_r
+                %span
+                  = link_to image_tag("logo-gris-twitter.png", :height => '20px'), "https://twitter.com/Facegol_Oficial", |
+                    :class => "boton-blanco-redondo", :title => "Twitter", :target => "_blank"                            |
+              %li.margen_sm_r
+                %span
+                  = link_to image_tag("logo-gris-youtube.png", :height => '20px'), "https://www.youtube.com/channel/UCwy1k2ohI6DnKBjYEkg4mqw", |
+                    :class => "boton-blanco-redondo", :title => "YouTube", :target => "_blank"                                                 |
+              %li.margen_sm_r
+                %span
+                  = link_to image_tag("logo-gris-instagram.png", :height => '20px'), "https://www.instagram.com/facegol.oficial", |
+                    :class => "boton-blanco-redondo", :title => "Instagram", :target => "_blank"                                  |
+          .row
+            %ul.nav.nav-pills.navbar-right.menu_gris-ocre
+              %li= link_to "INICIO", "/", :class=> ""
+              %li.menu-linea  
+              %li= link_to "CURSOS", "#", :class=> ""
+              %li.menu-linea  
+              %li= link_to "CONFERENCIAS", "#", :class=> ""
+              %li.menu-linea  
+              %li= link_to "PARTIDOS", "#", :class=> ""
+              %li.menu-linea  

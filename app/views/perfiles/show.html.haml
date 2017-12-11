@@ -1,0 +1,34 @@
+.container.margen_t-b
+  - if @perfil.usuario == current_usuario
+    .row
+      = link_to 'Editar perfil', "/perfiles/#{@perfil.id}/edit", :class => 'btn boton-ocre pull-right'
+
+  .row
+    .col-md-4.col-md-offset-2
+      %p
+        %b Correo:
+        = @perfil.usuario.email
+    .col-md-4
+      %p
+        %b Apodo:
+        = @perfil.apodo
+
+  .row
+    .col-md-4.col-md-offset-2
+      %p
+        %b Primer nombre:
+        = @perfil.primer_nombre
+    .col-md-4
+      %p
+        %b Segundo nombre:
+        = @perfil.segundo_nombre
+
+  .row
+    .col-md-4.col-md-offset-2
+      %p
+        %b Primer apellido:
+        = @perfil.primer_apellido
+    .col-md-4
+      %p
+        %b Segundo apellido:
+        = @perfil.segundo_apellido

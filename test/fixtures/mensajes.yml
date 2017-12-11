@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cuerpo: MyText
+  usuario: one
+  conversacion: one
+
+two:
+  cuerpo: MyText
+  usuario: two
+  conversacion: two

@@ -1,0 +1,42 @@
+.container#amistad
+	.row.panel
+		.col-md-12
+			%ul.nav.nav-tabs
+				%li.active{:role => "presentation"}
+					%a{:href => "#amigos", :"aria-controls" => "amigos", :role => "tab", :"data-toggle" => "tab"}
+						Amigos
+						%span#contador_amigos.badge
+							= current_usuario.friends.count
+				%li{:role => "presentation"}
+					%a{:href => "#solicitudes", :"aria-controls" => "solicitudes", :role => "tab", :"data-toggle" => "tab"}
+						Solicitudes
+						%span#contador_solicitudes.badge
+							= current_usuario.requested_friends.count
+				%li{:role => "presentation"}
+					%a{:href => "#bloqueados", :"aria-controls" => "bloqueados", :role => "tab", :"data-toggle" => "tab"}
+						Bloqueados
+						%span#contador_bloqueados.badge
+							= current_usuario.blocked_friends.count
+			.tab-content.margen_t-b
+				#amigos.tab-pane.active.container
+					.row
+						- current_usuario.friends.each do |amigo|
+							= render "amigos/amigo", amigo: amigo
+
+				#solicitudes.tab-pane.container
+					.row
+						- current_usuario.requested_friends.each do |amigo|
+							= render "amigos/amigo", amigo: amigo
+
+				#bloqueados.tab-pane.container
+					.row
+						- current_usuario.blocked_friends.each do |amigo|
+							= render "amigos/amigo", amigo: amigo
+
+	.row
+		.col-md-12
+			#personas
+				.row
+					%h3.text-center Personas
+					- @amigos.each do |amigo|
+						= render "amigos/amigo", amigo: amigo

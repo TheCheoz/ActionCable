@@ -1,0 +1,5 @@
+%li
+	.row
+		%div{:class => "#{usuario.id == mensaje.usuario_id ? 'message-sent' : 'message-received'}", :"data-toggle" => "tooltip", :"data-placement" => "top", :title => "#{mensaje.created_at.strftime('%I:%M %p %d-%m-%Y')}"}
+			= mensaje.cuerpo
+		%small.fecha-mensaje{:class => "#{usuario.id == mensaje.usuario_id ? 'text-right' : 'text-left'}"}= mensaje.created_at.strftime('%I:%M %p %d-%m-%Y')

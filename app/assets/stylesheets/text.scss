@@ -1,0 +1,472 @@
+@charset "utf-8";
+
+@font-face {
+  font-family: "Helvetica Oblique";
+  src: font-url('Helvetica-Oblique.otf') format("truetype");
+}
+
+@font-face {
+  font-family: "Helvetica Roman";
+  src: font-url('HelveticaNeueLTStd-Roman.otf') format("truetype");
+}
+
+@font-face {
+  font-family: "Helvetica Medio";
+  src: font-url('HelveticaNeueLTStd-Md.otf') format("truetype");
+}
+
+@font-face {
+  font-family: "Helvetica Light";
+  src: font-url('HelveticaNeueLTStd-Lt.otf') format("truetype");
+}
+
+@font-face {
+  font-family: "Helvetica Condensada";
+  src: font-url('HelveticaNeueLTStd-Cn.otf') format("truetype");
+}
+
+@font-face {
+  font-family: "Helvetica Bold";
+  src: font-url('HelveticaNeueLTStd-Bd.otf') format("truetype");
+}
+
+@font-face {
+  font-family: "Helvetica Bold Condensada";
+  src: font-url('HelveticaNeueLTStd-BdCn.otf') format("truetype");
+}
+
+@font-face {
+  font-family: "Gro Bold";
+  src: font-url('GROBOLD.ttf') format("truetype");
+}
+
+@font-face {
+  font-family: "Helvetica Light Italica";
+  src: font-url('HelveticaNeueLTStd-LtIt.otf') format("truetype");
+}
+
+
+@font-face {
+  font-family: "Helvetica Light Condensada";
+  src: font-url('HelveticaNeueLTStd-LtCn.otf') format("truetype");
+}
+
+.txt-h-oblique
+{
+    font-family: 'Helvetica Oblique', Helvetica, Verdana, sans-serif; 
+}
+
+
+.txt-h-roman
+{
+    font-family: 'Helvetica Roman', Helvetica, Verdana, sans-serif; 
+}
+
+.txt-h-medio
+{
+    font-family: 'Helvetica Medio', Helvetica, Verdana, sans-serif; 
+}
+
+.txt-h-light
+{
+    font-family: 'Helvetica Light', Helvetica, Verdana, sans-serif; 
+}
+
+
+.txt-h-condensada
+{
+    font-family: 'Helvetica Condensada', Helvetica, Verdana, sans-serif; 
+}
+
+.txt-h-bold
+{
+    font-family: 'Helvetica Bold', Helvetica, Verdana, sans-serif; 
+}
+
+.txt-h-bold-condensada
+{
+    font-family: 'Helvetica Bold Condensada', Helvetica, Verdana, sans-serif; 
+}
+
+.txt-gro-bold
+{
+    font-family: 'Gro Bold', Helvetica, Verdana, sans-serif; 
+}
+
+.txt-h-light-italica
+{
+    font-family: 'Helvetica Light Italica', Helvetica, Verdana, sans-serif; 
+}
+
+
+.txt-h-light
+{
+    font-family: 'Helvetica Light', Helvetica, Verdana, sans-serif; 
+}
+
+.txt-h-light-condensada
+{
+    font-family: 'Helvetica Light Condensada', Helvetica, Verdana, sans-serif; 
+}
+
+
+.txt-blanco
+{
+    color:              $color-1;
+}
+
+.txt-negro
+{
+    color:              $color-2;
+}
+
+.txt-ocre
+{
+    color:              $color-3;
+}
+
+.txt-gris
+{
+    color:              $color-4;
+}
+
+.txt-gris-medio
+{
+    color:              $color-12;
+}
+
+.txt-amarillo
+{
+    color:              $color-5;
+}
+
+.txt-crema
+{
+    color:              $color-6;
+}
+
+.txt-verde
+{
+    color:              $color-7;
+}
+
+
+.txt-rojo
+{
+    color:              $color-8;
+}
+
+.txt-claro
+{
+    color:              $color-9;
+}
+
+.txt-oscuro
+{
+    color:              $color-10;
+}
+
+
+
+
+
+.txt-grueso
+{
+    font-weight:        bold;
+}
+
+.txt-justificado
+{
+    text-align:     justify;
+    text-justify:   inter-word;
+    
+}
+
+.txt-tachado
+{
+    text-decoration:    line-through;
+}
+
+
+.txt-italica
+{
+    font-style: italic;
+    
+}
+
+/*********************************************************************************/
+
+.enlace_sin_linea:hover
+{
+    text-decoration: none;
+}
+
+.enlace_blanco
+{
+   color:              $color-1; 
+}
+
+.enlace_blanco:hover
+{
+   color:              $color-5; 
+}
+
+.enlace_blanco:visited
+{
+   color:              $color-1;
+}
+
+
+.enlace_amarillo
+{
+   color:              $color-5; 
+}
+
+.enlace_amarillo:hover
+{
+   color:              $color-9; 
+}
+
+
+.enlace_gris
+{
+   color:              $color-4; 
+}
+
+.enlace_gris:hover
+{
+   color:              $color-3; 
+}
+
+.enlace_gris-medio
+{
+   color:              $color-12; 
+}
+
+.enlace_gris-medio:hover
+{
+   color:              $color-11; 
+}
+
+
+.enlace_oscuro
+{
+   color:              $color-10; 
+}
+
+.enlace_oscuro:hover
+{
+   color:              $color-1; 
+}
+
+
+.enlace_ocre
+{
+   color:              $color-3; 
+}
+
+.enlace_ocre:hover
+{
+   color:              $color-4; 
+}
+
+.enlaces_ocre a
+{
+   color:              $color-3; 
+}
+
+.enlaces_ocre a:hover
+{
+   color:              $color-4; 
+}
+
+.enlace_negro
+{
+   color:              $color-2; 
+}
+
+.enlace_negro:hover
+{
+   color:              $color-3; 
+}
+
+/*********************************************************************************/
+.requerido
+{
+    font-size:                  9px;
+    color:                      red; 
+}
+
+
+/*********************************************************************************/
+
+#titulo h2
+{
+    color:                      $color-1;
+    
+}
+
+
+/*********************************************************************************/
+.tama_8 { font-size: 8pt; }
+.tama_9 { font-size: 9pt; }
+.tama_10 { font-size: 10pt; }
+.tama_11 { font-size: 11pt; }
+.tama_12 { font-size: 12pt; }
+.tama_13 { font-size: 13pt; }
+.tama_14 { font-size: 14pt; }   
+.tama_15 { font-size: 15pt; }
+.tama_16 { font-size: 16pt; }
+.tama_17 { font-size: 17pt; }
+.tama_18 { font-size: 18pt; }
+.tama_19 { font-size: 19pt; }
+.tama_20 { font-size: 20pt; }
+.tama_21 { font-size: 21pt; }
+.tama_22 { font-size: 22pt; }
+.tama_24 { font-size: 24pt; }
+.tama_25 { font-size: 25pt; }
+.tama_29 { font-size: 29pt; }
+.tama_30 { font-size: 30pt; }
+.tama_36 { font-size: 36pt; }
+.tama_38 { font-size: 38pt; }
+.tama_46 { font-size: 46pt; }
+.tama_40 { font-size: 40pt; }
+.tama_53 { font-size: 53pt; }
+.tama_70 { font-size: 70pt; }
+.tama_100 { font-size: 100pt; }
+
+/*********************************************************************************/
+
+.txt_general 
+{ 
+    font-family:    'Helvetica Roman', Helvetica, Verdana, sans-serif;  
+    font-size:      12pt;
+}
+
+
+.txt_borde_blanco
+{
+    text-shadow:            -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+    -moz-text-stroke:       1px white;
+    -webkit-text-stroke:    1px white;
+}
+
+.txt_borde_oscuro
+{   
+    text-shadow: 0 0 0.2em $color-4, 0 0 0.2em $color-4, 0 0 0.2em $color-4
+}
+
+.alto_linea12
+{
+    line-height: 1.2
+}
+
+.alert-error {
+    background-color: #f2dede;
+    border-color: #eed3d7;
+    color: #b94a48;
+    text-align: left;
+ }
+ 
+ 
+/******************************************************************************/
+/**************** REGLAS PARA TAMAÑOS ESPECIALES*******************************/
+
+$screen-xs-max: 767px;
+$screen-sm-min: 768px;
+$screen-sm-max: 991px;
+$screen-md-min: 992px;
+$screen-md-max: 1199px;
+$screen-lg-min: 1200px;
+
+$agrega_xs: 4pt;
+$agrega_sm: 3pt;
+
+// ***** SOLO XS ********  
+@media screen and (max-width: $screen-xs-max) 
+{
+
+    .tama_8 { font-size: 8pt + $agrega_xs; }
+    .tama_9 { font-size: 9pt + $agrega_xs; }
+    .tama_10 { font-size: 10pt + $agrega_xs; }
+    .tama_11 { font-size: 11pt + $agrega_xs; }
+    .tama_12 { font-size: 12pt + $agrega_xs; }
+    .tama_13 { font-size: 13pt + $agrega_xs; }
+    .tama_14 { font-size: 14pt + $agrega_xs; }   
+    .tama_15 { font-size: 15pt + $agrega_xs; }
+    .tama_16 { font-size: 16pt + $agrega_xs; }
+    .tama_17 { font-size: 17pt + $agrega_xs; }
+    .tama_18 { font-size: 18pt + $agrega_xs; }
+    .tama_19 { font-size: 19pt + $agrega_xs; }
+    .tama_20 { font-size: 20pt + $agrega_xs; }
+    .tama_21 { font-size: 21pt + $agrega_xs; }
+    .tama_22 { font-size: 22pt + $agrega_xs; }
+    .tama_24 { font-size: 24pt + $agrega_xs; }
+    .tama_25 { font-size: 25pt + $agrega_xs; }
+    .tama_29 { font-size: 29pt + $agrega_xs; }
+    .tama_30 { font-size: 30pt + $agrega_xs; }
+    .tama_36 { font-size: 36pt + $agrega_xs; }
+    .tama_38 { font-size: 38pt + $agrega_xs; }
+    .tama_46 { font-size: 46pt + $agrega_xs; }
+    .tama_40 { font-size: 40pt + $agrega_xs; }
+    .tama_53 { font-size: 53pt + $agrega_xs; }
+    .tama_70 { font-size: 70pt + $agrega_xs; }
+    .tama_100 { font-size: 100pt + $agrega_xs; }
+    
+    
+}
+
+// ***** SM Y SUPERIOR ******** 
+@media screen and (min-width: $screen-sm-min) 
+{
+
+}
+
+// ***** SOLO SM ********  
+@media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) 
+{
+    .tama_8 { font-size: 8pt + $agrega_sm; }
+    .tama_9 { font-size: 9pt + $agrega_sm; }
+    .tama_10 { font-size: 10pt + $agrega_sm; }
+    .tama_11 { font-size: 11pt + $agrega_sm; }
+    .tama_12 { font-size: 12pt + $agrega_sm; }
+    .tama_13 { font-size: 13pt + $agrega_sm; }
+    .tama_14 { font-size: 14pt + $agrega_sm; }   
+    .tama_15 { font-size: 15pt + $agrega_sm; }
+    .tama_16 { font-size: 16pt + $agrega_sm; }
+    .tama_17 { font-size: 17pt + $agrega_sm; }
+    .tama_18 { font-size: 18pt + $agrega_sm; }
+    .tama_19 { font-size: 19pt + $agrega_sm; }
+    .tama_20 { font-size: 20pt + $agrega_sm; }
+    .tama_21 { font-size: 21pt + $agrega_sm; }
+    .tama_22 { font-size: 22pt + $agrega_sm; }
+    .tama_24 { font-size: 24pt + $agrega_sm; }
+    .tama_25 { font-size: 25pt + $agrega_sm; }
+    .tama_29 { font-size: 29pt + $agrega_sm; }
+    .tama_30 { font-size: 30pt + $agrega_sm; }
+    .tama_36 { font-size: 36pt + $agrega_sm; }
+    .tama_38 { font-size: 38pt + $agrega_sm; }
+    .tama_46 { font-size: 46pt + $agrega_sm; }
+    .tama_40 { font-size: 40pt + $agrega_sm; }
+    .tama_53 { font-size: 53pt + $agrega_sm; }
+    .tama_70 { font-size: 70pt + $agrega_sm; }
+    .tama_100 { font-size: 100pt + $agrega_sm; }
+}
+
+// ***** MD Y SUPERIOR ********  
+@media screen and (min-width: $screen-md-min) 
+{
+
+}
+
+// ***** SOLO MD ********  
+@media screen and (min-width: $screen-md-min) and (max-width: $screen-md-max) 
+{
+
+}
+
+// ***** LG Y SUPERIOR ********  
+@media screen and(min-width: $screen-lg-min) 
+{
+
+}

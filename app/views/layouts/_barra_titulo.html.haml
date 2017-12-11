@@ -1,0 +1,8 @@
+/ ----------------------- COMIENZO DE LA BARRA BUSCADOR ----------------
+%section.container
+  .row
+    .col-sm-12.cuadro_semi-redondeado20-arriba.bk-gris.txt-blanco.relleno_l-r.relleno_t-b
+      %h2.quitar_margen_t-b.txt-h-bold.tama_24
+        = image_tag(@titulo_icono, :alt => "Icono", :height => "50px") + "&nbsp;".html_safe unless @titulo_icono.nil?
+        = @titulo.html_safe
+/ *********************** FIN DE LA BARRA BUSCADOR *******************************************

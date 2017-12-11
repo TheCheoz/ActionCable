@@ -1,0 +1,43 @@
+.container.margen_t-b
+  = form_for @perfil, url: "/perfiles/#{@perfil.id}" do |f|
+    - if @perfil.errors.any?
+      #error_explanation
+        %h2= "#{pluralize(@perfil.errors.count, "error")} prohibited this perfil from being saved:"
+        %ul
+          - @perfil.errors.full_messages.each do |message|
+            %li= message
+    
+    .row
+      .col-md-4.col-md-offset-2
+        .form-group
+          = f.label :email
+          = text_field_tag :email,@perfil.usuario.email, :class => 'form-control', :readonly => 'true'
+      .col-md-4
+        .form-group
+          = f.label :apodo
+          = f.text_field :apodo, :class => 'form-control'
+    .row
+      .col-md-4.col-md-offset-2
+        .form-group
+          = f.label :primer_nombre
+          = f.text_field :primer_nombre, :class => 'form-control'
+      .col-md-4
+        .form-group
+          = f.label :segundo_nombre
+          = f.text_field :segundo_nombre, :class => 'form-control'
+
+    .row
+      .col-md-4.col-md-offset-2
+        .form-group
+          = f.label :primer_apellido
+          = f.text_field :primer_apellido, :class => 'form-control'
+      .col-md-4
+        .form-group
+          = f.label :segundo_apellido
+          = f.text_field :segundo_apellido, :class => 'form-control'
+
+    .row
+      .col-md-12
+        .text-center
+          = f.submit 'Guardar', :class => 'btn boton-verde'
+          = link_to 'Atras', :back, :class => 'btn boton-ocre'

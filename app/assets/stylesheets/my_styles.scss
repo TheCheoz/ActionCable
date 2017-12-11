@@ -1,0 +1,193 @@
+.ft-blanco
+{
+    color:                 $color-1;
+}
+
+.ft-negro
+{
+    color:                 $color-2;
+}
+
+.ft-ocre
+{
+    color:                 $color-3;
+}
+
+.ft-gris
+{
+    color:                 $color-4;
+}
+
+.ft-amarillo
+{
+    color:                 $color-5;
+}
+
+.ft-crema
+{
+    color:                 $color-6;
+}
+
+.ft-verde
+{
+    color:                 $color-7;
+}
+
+.ft-rojo
+{
+    color:                 $color-8;
+}
+
+.ft-gris-claro
+{
+    color:                 $color-9;
+}
+
+.ft-gris-super-oscuro
+{
+    color:                 $color-10;
+}
+
+.ft-gris-super-claro
+{
+    color:                 $color-11;
+}
+
+.ft-gris-medio-oscuro
+{
+    color:                 $color-12;
+}
+
+
+.opciones_amistad
+{
+	margin-top: -2.5px;
+}
+
+ul {
+  padding-left: 0px;
+  list-style: none;
+}
+
+#lista-usuarios {
+  height: 600px;
+  overflow-y: auto;
+}
+
+.lista-mensajes {
+  height: 525px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.lista-mensajes ul {
+  padding: 10px;
+  background-color: white;
+  min-height: 100%;
+}
+
+.textarea-enviar-mensaje {
+  float: left;
+  padding-right: 65px;
+  overflow-y: hidden;
+  resize: none;
+  height: 67.5px !important;
+}
+
+.boton-enviar-mensaje {
+  float: left;
+  position: relative;
+  margin-left: -60px;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin-top: 8px;
+}
+
+.boton-enviar-mensaje i {
+  margin-top: 7.5px;
+}
+
+
+.message-sent {
+  position: relative;
+  background-color: $color-5;
+  color: $color-2;
+  border-color: $color-12;
+  border-radius: 7.5px;
+  margin: 5px 20px;
+  padding: 10px;
+  float: right;
+  word-wrap: break-word;
+  max-width: 90%;
+}
+
+.message-received {
+  background-color: $color-9;
+  color: $color-2;
+  border-color: $color-10;
+  border-radius: 7.5px;
+  margin: 5px 20px;
+  padding: 10px;
+  float: left;
+  word-wrap: break-word;
+  max-width: 90%;
+}
+
+.fecha-mensaje {
+  display: block;
+  clear: both;
+  margin: 0 20px;
+  font-size: 12px;
+}
+
+.item-usuario-chat {
+  border-bottom: 0.5px solid $color-12;
+  padding: 15px 5px;
+}
+
+.item-usuario-chat:hover {
+  background-color: $color-11;
+}
+
+.item-usuario-chat:hover a {
+  color: $color-2;
+}
+
+.usuario-activo  {
+  background-color: $color-11;
+}
+
+.usuario-activo a {
+  color: $color-2;
+}
+
+
+.item-usuario-chat a {
+  text-decoration: none;
+}
+
+.item-usuario-chat figure {
+  width: 50px;
+  height: 50px;
+  float: left;
+  margin-right: 10px;
+  border-radius: 50%;
+  border: 3px solid $color-5;
+}
+
+.item-usuario-chat figure img {
+  width: 100%;
+  height: 100%;
+}
+
+.item-usuario-chat .informacion-item-usuario {
+}
+
+.container-panel {
+  border-radius: 15px;
+}
+
+.container-panel .panel-heading {
+  border-radius: 15px 15px 0 0;
+}

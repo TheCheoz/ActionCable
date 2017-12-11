@@ -1,0 +1,12 @@
+var conversaciones = $('#lista-conversaciones');
+conversaciones.empty();
+conversaciones.append("<%= j(render 'conversaciones/conversacion', conversacion: @conversacion, usuario: current_usuario) %>");
+conversacion = conversaciones.find("[data-conversacion-id='" + "<%= @conversacion.id %>" + "']");
+
+$(".item-usuario-chat").removeClass("usuario-activo");
+$("#item-usuario-chat-" +  "<%= @conversacion.usuario_opuesto(current_usuario).id %>").removeClass("bk-rojo");
+$("#item-usuario-chat-" +  "<%= @conversacion.usuario_opuesto(current_usuario).id %>").addClass("usuario-activo");
+
+var lista_mensajes = conversacion.find('.lista-mensajes');
+var height = lista_mensajes[0].scrollHeight;
+lista_mensajes.scrollTop(height);

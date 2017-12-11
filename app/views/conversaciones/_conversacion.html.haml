@@ -1,0 +1,15 @@
+%li
+  .panel.container-panel.bk-gris-super-claro{ :"data-conversacion-id" => "#{conversacion.id}", :"data-usuario-id" => "#{conversacion.usuario_opuesto(usuario).id}" }
+    .panel-heading.bk-gris.ft-blanco
+      %strong De: 
+      = conversacion.usuario_opuesto(usuario).perfil.nombre_completo
+    .panel-body
+      .lista-mensajes
+        %ul
+          = render 'conversaciones/contenido_conversacion', mensajes: conversacion.mensajes, usuario: usuario
+      %form.new_message{:"data-receptor" => "#{conversacion.usuario_opuesto(usuario).id}"}
+        %input{:type => "hidden", :name => "conversacion_id", :value => "#{conversacion.id}"}/
+        %input{:type => "hidden", :name => "usuario_id", :value => "#{usuario.id}"}/
+        %textarea.form-control.textarea-enviar-mensaje{:name => "cuerpo"}
+        %button.btn.boton-verde.boton-enviar-mensaje.tama_18{:type => "submit"}
+          %i.fa.fa-check

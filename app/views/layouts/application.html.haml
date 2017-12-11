@@ -1,0 +1,17 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title GolCommunity
+    = csrf_meta_tags
+    = favicon_link_tag 'favicon.ico?v=1'
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track' => 'reload'
+  %body.txt_general
+    = render 'layouts/valida_javascript'
+    = render 'layouts/header'
+    / ------- COMIENZO DEL CUERPO ---------
+    %main.bk-blanco
+      = yield
+    / ************ FIN DEL CUERPO ************
+    = render 'layouts/footer'
