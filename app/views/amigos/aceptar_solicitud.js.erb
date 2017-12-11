@@ -5,11 +5,8 @@ solicitud.remove();
 var amigos = $("#amigos .row");
 amigos.append("<%= j(render 'amigos/amigo', amigo: @amigo) %>");
 
-var contador_solicitudes = parseInt($("#contador_solicitudes").text());
-$("#contador_solicitudes").text(contador_solicitudes - 1);
-
-var contador_amigos = parseInt($("#contador_amigos").text());
-$("#contador_amigos").text(contador_amigos + 1);
+$("#contador_solicitudes").text("<%= @current_usuario.requested_friends.count %>");
+$("#contador_amigos").text("<%= @current_usuario.friends.count %>");
 
 var personas = $("#personas .row");
 var persona = personas.find("[data-container-amigo='" + "<%= @amigo.id %>" + "']");

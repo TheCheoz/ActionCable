@@ -5,11 +5,8 @@ amigo.remove();
 var bloqueados = $("#bloqueados .row");
 bloqueados.append("<%= j(render 'amigos/amigo', amigo: @amigo) %>");
 
-var contador_amigos = parseInt($("#contador_amigos").text());
-$("#contador_amigos").text(contador_amigos - 1);
-
-var contador_bloqueados = parseInt($("#contador_bloqueados").text());
-$("#contador_bloqueados").text(contador_bloqueados + 1);
+$("#contador_amigos").text("<%= @current_usuario.friends.count %>");
+$("#contador_bloqueados").text("<%= @current_usuario.blocked_friends.count %>");
 
 var personas = $("#personas .row");
 var persona = personas.find("[data-container-amigo='" + "<%= @amigo.id %>" + "']");
